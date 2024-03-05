@@ -1,0 +1,166 @@
+body {
+  margin: 0px;
+  background-color: #04364a;
+}
+
+.home {
+  color: #dafffb;
+  margin-top: 80px;
+  padding-bottom: 550px;
+  text-align: center;
+  background-image: url('gambarHome.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding-top: 100px;
+}
+
+img {
+  border-radius: 20px;
+  padding-top: 10px;
+  height: 500px;
+  width: 1480px;
+}
+
+.navbar {
+  background-color: #f1b4bb;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.navbar-menu {
+  list-style-type: none;
+  margin: 30px;
+  padding: 0px;
+  text-align: right;
+}
+
+.navbar-menu li {
+  display: inline;
+  margin-right: 20px;
+}
+
+.navbar-menu a {
+  text-decoration: none;
+  color: #dafffb;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.page {
+  text-align: center;
+  padding: 80px;
+  margin: 20px;
+  background-color: #04364a;
+  color: #dafffb;
+}
+
+.page h1 {
+  margin-top: 100px;
+}
+
+.page p {
+  margin: 20px;
+}
+
+h1 {
+  color: #dafffb;
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.button {
+  background-color: #04364a;
+  color: #dafffb;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  font-size: 20px;
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.form-home {
+  background-color: #176b87;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: 300px;
+  margin: 0 auto;
+}
+
+.navbar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  background-color: #176b87;
+}
+
+.navbar li {
+  display: inline;
+  margin-right: 20px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #fdf0f0;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+footer {
+  background-color: #176b87;
+  text-align: center;
+  padding: 10px 0;
+}
+
+footer p {
+  color: #dafffb;
+  font-size: 14px;
+}
+
+.product-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 50px;
+}
+
+.product-list li {
+  background-color: #fff;
+  width: 500px;
+  margin: 20px;
+  padding: 10px;
+  padding-right: 100px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.product-list img {
+  max-width: 100%;
+  height: auto;
+}
+
+.product-list h2 {
+  font-size: 1.2em;
+  margin: 10px 0;
+}
+
+#page2 {
+  padding-bottom: 50px;
+  margin-bottom: 0px;
+}
+
+#form {
+  padding: 20px;
+  margin: 0px;
+}
+
+.logo-footer {
+  width: 40px;
+  height: 40px;
+}
