@@ -14,3 +14,5 @@ print(df)
 df.isnull().sum()
 
 df.shape
+
+df.info()
