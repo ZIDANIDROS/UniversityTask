@@ -10,3 +10,5 @@ from sklearn.metrics import classification_report, confusion_matrix, accuracy_sc
 
 df = pd.read_csv('/content/drive/MyDrive/placement.csv')
 print(df)
+
+df.isnull().sum()
