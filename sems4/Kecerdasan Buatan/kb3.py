@@ -19,3 +19,6 @@ df.info()
 
 import seaborn as sns
 sns.countplot(x='status',data=df)
+
+import seaborn as sns
+sns.countplot(x='status',hue='gender',data=df)
