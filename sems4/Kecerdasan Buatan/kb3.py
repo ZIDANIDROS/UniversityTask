@@ -16,3 +16,6 @@ df.isnull().sum()
 df.shape
 
 df.info()
+
+import seaborn as sns
+sns.countplot(x='status',data=df)
