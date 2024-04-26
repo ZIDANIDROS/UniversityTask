@@ -12,3 +12,5 @@ df = pd.read_csv('/content/drive/MyDrive/placement.csv')
 print(df)
 
 df.isnull().sum()
+
+df.shape
