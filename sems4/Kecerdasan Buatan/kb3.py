@@ -65,36 +65,9 @@ X_train, X_test, y_train, y_test= train_test_split(X, y , test_size=0.3, random_
 from sklearn.preprocessing import StandardScaler
 
 #-------------------------------------
-
-from sklearn.preprocessing import LabelEncoder
-from sklearn.naive_bayes import GaussianNB
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import accuracy_score
-
-# Persiapkan data (misalnya: X_train, y_train, X_test, y_test)
-# Anda perlu mengganti ini dengan data sesungguhnya Anda
-
-# Inisialisasi LabelEncoder
-label_encoder = LabelEncoder()
-
-# Melakukan encoding pada kolom 'gender'
-X['gender'] = label_encoder.fit_transform(X['gender'])
-
-# Pisahkan data menjadi data pelatihan dan data uji
-X_train, X_test, y_train, y_test = train_test_split(X['gender'], y, test_size=0.1, random_state=1)
-
-# Inisialisasi model Gaussian Naive Bayes
-model = GaussianNB()
-
-# Melatih model menggunakan data yang telah diproses
-model.fit(X_train.values.reshape(-1, 1), y_train)
-
-# Lakukan prediksi
-y_pred = model.predict(X_test.values.reshape(-1, 1))
-
-# Evaluasi model
-accuracy = accuracy_score(y_test, y_pred)
-print("Accuracy:", accuracy)
+sc = StandardScaler()
+X_train = sc.fit_transform(X_train)
+X_test = sc.transform(X_test)
 
 #-------------------------------------
 
