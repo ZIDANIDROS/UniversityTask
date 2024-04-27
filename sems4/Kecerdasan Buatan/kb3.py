@@ -101,6 +101,20 @@ ac
 
 #-------------------------------------
 
-
+cm
 
 #-------------------------------------
+
+from sklearn.metrics import classification_report
+
+#-------------------------------------
+
+print(confusion_matrix(y_test, y_pred))
+
+#-------------------------------------
+
+print(accuracy_score(y_test, y_pred)*100)
+
+#-------------------------------------
+
+print(classification_report(y_test, y_pred))
