@@ -40,7 +40,8 @@ df['status_n']=le.fit_transform(df['status'])
 
 #-------------------------------------
 
-df.info()
+df.drop(['sl_no','sl_no_n','gender','ssc_p','hsc_p','hsc_b', 'ssc_b', 'hsc_s', 'degree_p', 'degree_t', 'workex', 'etest_p', 'specialisation', 'mba_p', 'status'], axis=1, inplace=True)
+df
 
 #-------------------------------------
 
