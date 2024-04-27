@@ -13,8 +13,7 @@ df.isnull().sum()
 
 #-------------------------------------
 
-df = pd.read_csv('/content/drive/MyDrive/placement.csv')
-print(df)
+df.shape
 
 #-------------------------------------
 
