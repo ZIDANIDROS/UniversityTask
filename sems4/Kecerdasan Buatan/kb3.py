@@ -9,8 +9,7 @@ from sklearn.model_selection import train_test_split
 
 #-------------------------------------
 
-df = pd.read_csv('placement.csv')
-df.head()
+df.isnull().sum()
 
 #-------------------------------------
 
