@@ -58,8 +58,7 @@ y
 
 #-------------------------------------
 
-df.drop(['sl_no'], axis=1, inplace=True)
-df
+X_train, X_test, y_train, y_test= train_test_split(X, y , test_size=0.3, random_state=4)
 
 #-------------------------------------
 
