@@ -75,18 +75,8 @@ from sklearn.naive_bayes import GaussianNB
 
 #-------------------------------------
 
-# Mengubah X_test menjadi bentuk yang diharapkan
-# Ubah X_test menjadi bentuk yang diharapkan oleh model Gaussian Naive Bayes dengan menggunakan reshape(-1, 1).
-# 1. Gunakan model untuk melakukan prediksi pada X_test_reshaped.
-# 2. Buat DataFrame yang berisi nilai aktual (y_test) dan nilai prediksi (y_pred).
-# 3. X_test_reshaped = X_test.values.reshape(-1, 1)
-X_test_reshaped = X_test.values.reshape(-1, 1)
-
-# Melakukan prediksi menggunakan model
-y_pred = model.predict(X_test_reshaped)
-
-# Membuat DataFrame untuk membandingkan nilai aktual dan prediksi
-df1 = pd.DataFrame({'Actual Status': y_test, 'Predicted Status': y_pred})
+classifier = GaussianNB()
+classifier.fit(X_train, y_train)
 
 #-------------------------------------
 
