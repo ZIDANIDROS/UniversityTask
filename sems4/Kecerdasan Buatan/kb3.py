@@ -22,7 +22,21 @@ sns.countplot(x='status',data=df)
 
 #-------------------------------------
 
-df.shape
+le=LabelEncoder()
+df['sl_no_n']=le.fit_transform(df['sl_no'])
+df['gender_n']=le.fit_transform(df['gender'])
+df['ssc_p_n']=le.fit_transform(df['ssc_p'])
+df['ssc_b_n']=le.fit_transform(df['ssc_b'])
+df['hsc_p_n']=le.fit_transform(df['hsc_p'])
+df['hsc_b_n']=le.fit_transform(df['hsc_b'])
+df['hsc_s_n']=le.fit_transform(df['hsc_s'])
+df['degree_p_n']=le.fit_transform(df['degree_p'])
+df['degree_t_n']=le.fit_transform(df['degree_t'])
+df['workex_n']=le.fit_transform(df['workex'])
+df['etest_p_n']=le.fit_transform(df['etest_p'])
+df['specialisation_n']=le.fit_transform(df['specialisation'])
+df['mba_p_n']=le.fit_transform(df['mba_p'])
+df['status_n']=le.fit_transform(df['status'])
 
 #-------------------------------------
 
