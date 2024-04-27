@@ -45,8 +45,8 @@ df
 
 #-------------------------------------
 
-import seaborn as sns
-sns.countplot(x='status',data=df)
+X = df.iloc[:, :12].values
+y = df.iloc[:, 12].values
 
 #-------------------------------------
 
