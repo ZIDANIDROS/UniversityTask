@@ -17,7 +17,8 @@ df.info()
 
 #-------------------------------------
 
-df.isnull().sum()
+import seaborn as sns
+sns.countplot(x='status',data=df)
 
 #-------------------------------------
 
