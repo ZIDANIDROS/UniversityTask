@@ -92,4 +92,14 @@ from sklearn.metrics import confusion_matrix,accuracy_score
 
 #-------------------------------------
 
-print(accuracy_score(y_test, y_pred)*100)
+cm = confusion_matrix(y_test, y_pred)
+ac = accuracy_score(y_test, y_pred)
+
+#-------------------------------------
+
+
+#-------------------------------------
+
+
+
+#-------------------------------------
