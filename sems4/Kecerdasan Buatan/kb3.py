@@ -80,7 +80,7 @@ classifier.fit(X_train, y_train)
 
 #-------------------------------------
 
-df1
+y_pred = classifier.predict(X_test)
 
 #-------------------------------------
 
