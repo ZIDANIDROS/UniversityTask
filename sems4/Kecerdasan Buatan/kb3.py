@@ -88,7 +88,7 @@ df1
 
 #-------------------------------------
 
-print(confusion_matrix(y_test, y_pred))
+from sklearn.metrics import confusion_matrix,accuracy_score
 
 #-------------------------------------
 
