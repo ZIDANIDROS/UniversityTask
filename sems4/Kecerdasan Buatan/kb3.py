@@ -80,11 +80,11 @@ classifier.fit(X_train, y_train)
 
 #-------------------------------------
 
-y_pred = classifier.predict(X_test)
+df1 = pd.DataFrame({'Actual Status': y_test, 'Predicted Status': y_pred})
 
 #-------------------------------------
 
-print(classification_report(y_test, y_pred))
+df1
 
 #-------------------------------------
 
