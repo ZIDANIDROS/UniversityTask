@@ -50,8 +50,7 @@ y = df.iloc[:, 12].values
 
 #-------------------------------------
 
-import seaborn as sns
-sns.countplot(x='status',hue='gender',data=df)
+X
 
 #-------------------------------------
 
