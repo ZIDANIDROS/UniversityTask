@@ -71,17 +71,7 @@ X_test = sc.transform(X_test)
 
 #-------------------------------------
 
-#setalah itu kita menggunakan gaussanB
 from sklearn.naive_bayes import GaussianNB
-
-# Inisialisasi model Gaussian Naive Bayes
-model = GaussianNB()
-
-# Ubah data X_train menjadi bentuk yang diharapkan oleh model
-X_train_reshaped = X_train.values.reshape(-1, 1)
-
-# Melatih model menggunakan data yang telah diproses
-model.fit(X_train_reshaped, y_train)
 
 #-------------------------------------
 
