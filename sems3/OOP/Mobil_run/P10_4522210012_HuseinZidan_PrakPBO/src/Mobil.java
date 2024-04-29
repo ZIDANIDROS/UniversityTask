@@ -1,6 +1,10 @@
 class Mobil {
-   
 
+    private String nama;
+    private Mesin mesin;
+    private Ban ban;
+    private HeadUnit headUnit;
+   
     public Mobil(String nama, Mesin mesin, Ban ban, HeadUnit headUnit) {
         this.nama = nama;
         this.mesin = mesin;
