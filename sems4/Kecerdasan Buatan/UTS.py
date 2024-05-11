@@ -19,3 +19,15 @@ df.shape
 df.info()
 
 sns.countplot(x='Class',data=df)
+
+df["Selected"].hist()
+
+df["Class"].hist()
+
+fig, axes = plt.subplots(1, 3, figsize=(18, 6), sharey=True)
+sns.histplot(df, ax=axes[0], x="Area", kde=True, color='r')
+sns.histplot(df, ax=axes[1], x="AspectRation", kde=True, color='b')
+sns.histplot(df, ax=axes[2], x="Perimeter", kde=True)
+
+le = LabelEncoder()
+df['Selected_Numerik'] = le.fit_transform(df['Selected'])
