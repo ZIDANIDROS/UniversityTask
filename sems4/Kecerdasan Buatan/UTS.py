@@ -14,3 +14,8 @@ df = pd.read_excel('data_KB.xlsx')
 
 df.isnull().sum()
 
+df.shape
+
+df.info()
+
+sns.countplot(x='Class',data=df)
