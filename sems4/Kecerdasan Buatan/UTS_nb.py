@@ -1,3 +1,7 @@
+# UJIAN TENGAH SEMESTER (UTS) KECERDASAN BUATAN A
+# Nama : Husein Zidan
+# NPM  : 4522210012
+
 from sklearn.preprocessing import StandardScaler
 from sklearn.naive_bayes import GaussianNB
 from sklearn.preprocessing import LabelEncoder
@@ -5,6 +9,8 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report, accuracy_score
 from sklearn import tree
 from sklearn.tree import DecisionTreeClassifier, plot_tree
+from sklearn import svm
+from sklearn.metrics import confusion_matrix
 
 import numpy as np
 import pandas as pd
@@ -65,4 +71,48 @@ model.score(x, y)
 
 plt.figure(figsize=(120, 80))
 plot_tree(model, filled=True, feature_names=df.columns, class_names=model.classes_)
+#plt.show()
+
+#SVM
+svm_model = svm.SVC(kernel='linear')
+svm_model.fit(x_train, y_train)
+
+svm_pred = svm_model.predict(x_test)
+
+svm_accuracy = accuracy_score(y_test, svm_pred)
+#print("SVM Accuracy:", svm_accuracy)
+
+svm_conf_matrix = confusion_matrix(y_test, svm_pred)
+#print("SVM Confusion Matrix:")
+#print(svm_conf_matrix)
+
+sns.pairplot(df, hue='Class', diag_kind='kde')
+#plt.show()
+
+X = df[['Area', 'Perimeter']].values
+y = df['Class'].values
+
+label_encoder = LabelEncoder()
+y_encoded = label_encoder.fit_transform(y)
+
+scaler = StandardScaler()
+X_scaled = scaler.fit_transform(X)
+
+clf = svm.SVC(kernel='linear')
+clf.fit(X_scaled, y_encoded)
+
+plt.scatter(X_scaled[:, 0], X_scaled[:, 1], c=y_encoded, cmap=plt.cm.Paired, marker='o')
+
+w = clf.coef_[0]
+a = -w[0] / w[1]
+xx = np.linspace(-2, 2)
+yy = a * xx - (clf.intercept_[0]) / w[1]
+plt.plot(xx, yy, 'k-')
+
+plt.scatter(clf.support_vectors_[:, 0], clf.support_vectors_[:, 1],
+            s=100, facecolors='none', edgecolors='k')
+
+plt.xlabel('Area (scaled)')
+plt.ylabel('Perimeter (scaled)')
+plt.title('SVM with Linear Kernel')
 #plt.show()
