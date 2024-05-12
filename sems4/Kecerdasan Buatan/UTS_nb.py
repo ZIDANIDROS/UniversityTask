@@ -116,3 +116,6 @@ plt.xlabel('Area (scaled)')
 plt.ylabel('Perimeter (scaled)')
 plt.title('SVM with Linear Kernel')
 #plt.show()
+
+#Link
+#https://colab.research.google.com/drive/1fmYC1s1Gz-CAJskA2wF72ffc4oBPQt7p?usp=chrome_ntp#scrollTo=79mham-_wNEu
