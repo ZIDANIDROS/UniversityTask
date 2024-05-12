@@ -3,10 +3,13 @@ from sklearn.naive_bayes import GaussianNB
 from sklearn.preprocessing import LabelEncoder
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report, accuracy_score
+from sklearn import tree
+from sklearn.tree import DecisionTreeClassifier, plot_tree
 
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+import seaborn as sns
 import sklearn
 
 df = pd.read_excel('data_KB.xlsx')
@@ -32,23 +35,34 @@ sns.histplot(df, ax=axes[2], x="Perimeter", kde=True)
 le = LabelEncoder()
 df['Selected_Numerik'] = le.fit_transform(df['Selected'])
 
-print(df['Selected'].unique())
+#print(df['Selected'].unique())
 
-print(df['Class'].unique())
+#print(df['Class'].unique())
 
 X = df.drop(['Class', 'Selected'], axis=1,)
 y = df['Class']
 
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=4)
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3, random_state=4)
 
 sc = StandardScaler()
-X_train = sc.fit_transform(X_train)
-X_test = sc.transform(X_test)
+x_train = sc.fit_transform(x_train)
+x_test = sc.transform(x_test)
 
 classifier = GaussianNB()
 classifier.fit(X_train, y_train)
 
 y_pred = classifier.predict(X_test)
 
-print("Accuracy:", accuracy_score(y_test, y_pred))
-print(classification_report(y_test, y_pred))
+#print("Accuracy:", accuracy_score(y_test, y_pred))
+#print(classification_report(y_test, y_pred))
+
+#Decision Tree
+
+model = tree.DecisionTreeClassifier()
+model.fit(x, y)
+
+model.score(x, y)
+
+plt.figure(figsize=(120, 80))
+plot_tree(model, filled=True, feature_names=df.columns, class_names=model.classes_)
+#plt.show()
