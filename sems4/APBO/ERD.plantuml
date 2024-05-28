@@ -1,0 +1,39 @@
+@startuml ERD
+entity "Anak" {
+  nama: String
+  tanggalLahir: Date
+  alamat: String
+}
+
+entity "Wali" {
+  nama: String
+  alamat: String
+  nomorTelepon: String
+}
+
+entity "Staf" {
+  nama: String
+  posisi: String
+  jadwalKerja: String
+}
+
+entity "Jadwal" {
+  tanggal: Date
+  kegiatan: String
+}
+
+entity "Laporan" {
+  tanggal: Date
+  jenis: String
+  isi: String
+}
+
+Anak ||--o{ Wali : memiliki
+Wali ||--o{ Anak : mengurus
+Jadwal ||--o{ Staf : melibatkan
+Staf ||--o{ Jadwal : mengelola
+Staf ||--o{ Staf : mengelola
+Staf ||--o{ Wali : mengelola
+Staf ||--o{ Laporan : membuat
+Wali ||--o{ Laporan : melihat
+@enduml
