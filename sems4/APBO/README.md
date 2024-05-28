@@ -1,4 +1,4 @@
-## Penjelasan Diagram Kelas Daycare
+## Penjelasan Diagram Class Daycare
 
 ![alt text](DiagramClass.png)
 </br>
