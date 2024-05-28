@@ -1,26 +1,26 @@
 @startuml DC
 class Anak {
-  - nama: String [1] = ""
-  - tanggalLahir: Date [1] = null
-  - alamat: String [1] = ""
-  - orangTua: Wali [1] = null
+  - nama: String
+  - tanggalLahir: Date = null
+  - alamat: String
+  - orangTua: wali [1..1] = null
   + void daftarAnak()
   + void perbaruiData()
 }
 
-class Wali {
-  - nama: String [1] = ""
-  - alamat: String [1] = ""
-  - nomorTelepon: String [1] = ""
-  - anak: List<Anak> [*] = new ArrayList<>()
+class wali {
+  - nama: String
+  - alamat: String
+  - nomorTelepon: String
+  - anak: List<Anak> [0..*] = new ArrayList<>()
   + void daftarOrangTua()
   + void perbaruiData()
 }
 
 class Staf {
-  - nama: String [1] = ""
-  - posisi: String [1] = ""
-  - jadwalKerja: String [1] = ""
+  - nama: String
+  - posisi: String
+  - jadwalKerja: String
   + void perbaruiData()
   + void kelolaJadwal()
   + void kelolaDataStaf()
@@ -28,25 +28,25 @@ class Staf {
 }
 
 class Jadwal {
-  - tanggal: Date [1] = null
-  - kegiatan: String [1] = ""
-  - staf: List<Staf> [*] = new ArrayList<>()
+  - tanggal: Date = null
+  - kegiatan: String
+  - staf: List<Staf> [0..*] = new ArrayList<>()
   + void kelolaJadwal()
 }
 
 class Laporan {
-  - tanggal: Date [1] = null
-  - jenis: String [1] = ""
-  - isi: String [1] = ""
+  - tanggal: Date = null
+  - jenis: String
+  - isi: String
   + void lihatLaporan()
 }
 
-Anak --> "1" Wali : orangTua
-Wali --> "*" Anak : anak
-Jadwal --> "*" Staf : staf
-Staf --> Jadwal : kelola
-Staf --> Wali : kelola
-Staf --> Staf : kelola
-Staf --> Laporan : buat
-Wali --> Laporan : lihat
+Anak --> "1..1" wali
+wali --> "0..*" Anak
+Jadwal --> "0..*" Staf
+Staf --> "0..*" Jadwal
+Staf --> "0..*" Staf
+Staf --> "0..*" wali
+Staf --> "0..*" Laporan
+wali --> "0..*" Laporan
 @enduml
