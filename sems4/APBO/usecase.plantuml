@@ -5,25 +5,17 @@ skinparam packageStyle rectangle
 
 actor "Orang Tua" as OrangTua
 actor "Staf" as Staf
-actor "Admin" as Admin
 
 rectangle "Use Cases" {
   usecase "Daftar Anak" as DaftarAnak
   usecase "Lihat Jadwal" as LihatJadwal
   usecase "Buat Laporan" as BuatLaporan
-  usecase "Kelola Data Staf" as KelolaDataStaf
-  usecase "Kelola Data Orang Tua" as KelolaDataOrangTua
-  usecase "Kelola Jadwal" as KelolaJadwal
 
   OrangTua --> DaftarAnak
   OrangTua --> LihatJadwal
 
   Staf --> LihatJadwal
   Staf --> BuatLaporan
-
-  Admin --> KelolaDataStaf
-  Admin --> KelolaDataOrangTua
-  Admin --> KelolaJadwal
 }
 
 @enduml

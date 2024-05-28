@@ -68,65 +68,24 @@ Diagram ini menggambarkan struktur kelas untuk sistem daycare dengan beberapa en
 
 Diagram ini memodelkan interaksi dan relasi antara entitas dalam sistem daycare, menggambarkan bagaimana data dikelola dan dihubungkan dalam sistem.
 
-# Daycare System - Entity-Relationship Diagram (ERD)
+# Use Case Diagram untuk Daycare System
 
-This UML diagram represents the Entity-Relationship Diagram (ERD) for a daycare system. It outlines the entities involved in the system and their relationships.
+## Use Cases untuk Orang Tua:
 
-## Entities:
+### 1. Daftar Anak
 
-### 1. Anak
+- Parents or guardians can register their children into the daycare system.
 
-- Attributes:
-  - nama: String
-  - tanggalLahir: Date
-  - alamat: String
-- Relationships:
-  - Belongs to one Wali
+### 2. Lihat Jadwal
 
-### 2. Wali
+- Parents or guardians can view the schedule of daycare activities.
 
-- Attributes:
-  - id: int
-  - nama: String
-  - alamat: String
-  - nomorTelepon: String
-- Relationships:
-  - Has one or more Anak
+## Use Cases untuk Staf:
 
-### 3. Staf
+### 1. Lihat Jadwal
 
-- Attributes:
-  - id: int
-  - nama: String
-  - posisi: String
-  - jadwalKerja: String
-- Relationships:
-  - Manages zero or more Jadwal
-  - Can have subordinate Staf
-  - Creates zero or more Laporan
+- Staff members can view the schedule of daycare activities.
 
-### 4. Jadwal
+### 2. Buat Laporan
 
-- Attributes:
-  - id: int
-  - tanggal: Date
-  - kegiatan: String
-- Relationships:
-  - Assigned to by one or more Staf
-
-### 5. Laporan
-
-- Attributes:
-  - id: int
-  - tanggal: Date
-  - jenis: String
-  - isi: String
-- Relationships:
-  - Created by zero or more Staf
-
-## Relationships:
-
-- Anak and Wali have a one-to-one relationship.
-- Staf and Jadwal have a one-to-many relationship.
-- Staf and Staf have a many-to-many relationship (Atasan).
-- Staf and Laporan have a many-to-many relationship (Membuat).
+- Staff members can create reports regarding daycare activities.
