@@ -1,5 +1,5 @@
 Diagram class
-![alt text](image.png)
+![alt text](DiagramClass.png)
 
 Penjelasan Kelas yang Diperbarui
 Kelas Anak
