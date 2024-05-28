@@ -70,6 +70,8 @@ Diagram ini memodelkan interaksi dan relasi antara entitas dalam sistem daycare,
 
 # Use Case Diagram untuk Daycare System
 
+![alt text](usecase.png)
+
 ## Use Cases untuk Orang Tua:
 
 ### 1. Daftar Anak
