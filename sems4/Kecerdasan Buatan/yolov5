@@ -18,3 +18,7 @@ pip install -r requirements.txt
 
 %reload_ext tensorboard
 %tensorboard --logdir runs
+
+from IPython.display import Image, clear_output
+from utils.plots import plot_results
+Image(filename='/content/yolov5/runs/train/yolov5s_results/results.png', width=1000)
