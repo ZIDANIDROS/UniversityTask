@@ -32,3 +32,7 @@ Image (filename='/content/yolov5/runs/train/yolov5s_results/val_batch0_labels.jp
 from IPython.display import Image, clear_output
 import glob
 from IPython.display import Image, display
+
+for imageName in glob.glob('/content/yolov5/runs/detect/exp/*.jpg'):
+  display(Image(filename=imageName, width=300))
+  print("\n")
