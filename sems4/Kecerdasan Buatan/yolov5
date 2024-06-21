@@ -15,3 +15,6 @@ pip install -r requirements.txt
 
 %cd /content/yolov5/
 !python train.py --img 416 --batch 16 --epoch 5 --data '../data.yaml' --weights yolov5s.pt --name yolov5s_results --cache
+
+%reload_ext tensorboard
+%tensorboard --logdir runs
