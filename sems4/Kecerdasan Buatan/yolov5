@@ -25,3 +25,6 @@ Image(filename='/content/yolov5/runs/train/yolov5s_results/results.png', width=1
 
 print ("GROUND TRUTH TRAINING DATA:")
 Image (filename='/content/yolov5/runs/train/yolov5s_results/val_batch0_labels.jpg', width=900)
+
+%cd /content/yolov5/
+!python detect.py --weights runs/train/yolov5s_results/weights/best.pt --img 416 --conf 0.4 --source ../test/images
