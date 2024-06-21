@@ -12,3 +12,6 @@ pip install -r requirements.txt
 !curl -L "https://app.roboflow.com/ds/HjiJb0BoO3?key=pBjMNgR8jn" > roboflow.zip; unzip roboflow.zip; rm roboflow.zip
 
 %cat data.yaml
+
+%cd /content/yolov5/
+!python train.py --img 416 --batch 16 --epoch 5 --data '../data.yaml' --weights yolov5s.pt --name yolov5s_results --cache
