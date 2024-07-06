@@ -1,3 +1,6 @@
+import shutil
+from google.colab import files
+
 !pip install bing_image_downloader
 
 !mkdir dataset_GelasPutih
