@@ -13,3 +13,6 @@ folder_path = '/content/dataset_GelasPutih/gelas putih'
 
 # Nama file zip yang akan dihasilkan
 output_filename = '/content/gelas putih.zip'
+
+# Membuat file zip
+shutil.make_archive(output_filename.replace('.zip', ''), 'zip', folder_path)
