@@ -10,3 +10,6 @@ downloader.download('gelas putih', limit= 135 , output_dir='dataset_GelasPutih',
 
 # Lokasi folder yang ingin di-zip
 folder_path = '/content/dataset_GelasPutih/gelas putih'
+
+# Nama file zip yang akan dihasilkan
+output_filename = '/content/gelas putih.zip'
