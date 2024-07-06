@@ -16,3 +16,6 @@ output_filename = '/content/gelas putih.zip'
 
 # Membuat file zip
 shutil.make_archive(output_filename.replace('.zip', ''), 'zip', folder_path)
+
+# Mengunduh file zip
+files.download(output_filename)
