@@ -1,4 +1,4 @@
-@startuml DC
+@startuml
 class Anak {
   - nama: String
   - tanggalLahir: Date = null
