@@ -8,6 +8,6 @@ data_info = data.info()
 data_head = data.head()
 
 
-data_info
-print('\n')
-data_head
+# data_info
+# print('\n')
+# data_head
