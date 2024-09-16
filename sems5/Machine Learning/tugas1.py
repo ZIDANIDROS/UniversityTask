@@ -64,6 +64,16 @@ data_dibersihkan = data[~outliers]
 
 #  ---------------------------------------------------
 
+sebelum = data_cleaned.isnull().sum()
+data_cleaned['bmi'].fillna(data_cleaned['bmi'].median(), inplace=True)
+setelah = data_cleaned.isnull().sum()
+
+# print(f"\nMissing values sebelum: {sebelum['bmi']}")
+# print('\n')
+# print(f"Missing values setelah: {setelah['bmi']}")
+# print('\n')
+# print("Data setelah menangani missing values:")
+# print(data_cleaned.head())
 
 #  ---------------------------------------------------
 
