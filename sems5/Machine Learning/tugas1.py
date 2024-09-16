@@ -77,5 +77,21 @@ setelah = data_cleaned.isnull().sum()
 
 #  ---------------------------------------------------
 
+hanyaSatuNilai = [col for col in data_cleaned.columns if data_cleaned[col].nunique() == 1]
+databersih = data_cleaned.drop(columns=hanyaSatuNilai)
+
+# print(f"\nKolom dengan satu nilai unik yang dihapus: {hanyaSatuNilai}")
+# print('\n')
+# print("Data setelah menghapus kolom dengan satu nilai:")
+# print(databersih.head())
 
 #  ---------------------------------------------------
+
+non_representative_columns = ['id']
+
+data_cleaned = data_cleaned.drop(columns=non_representative_columns)
+
+# print(f"\nKolom yang tidak representatif yang dihapus: {non_representative_columns}")
+# print('\n')
+# print("Data setelah menghapus kolom yang tidak representatif:")
+# print(data_cleaned.head())
