@@ -11,3 +11,13 @@ data_head = data.head()
 # data_info
 # print('\n')
 # data_head
+
+# ----------------------------------------------------
+
+duplicates = data.duplicated().sum()
+data_cleaned = data.drop_duplicates()
+
+# print(f"Jumlah duplikat yang dihapus: {duplicates}")
+# print('\n')
+
+# print(data_cleaned.head())
