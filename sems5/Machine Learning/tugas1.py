@@ -41,3 +41,16 @@ plt.title('Boxplot for BMI')
 
 # plt.tight_layout()
 # plt.show()
+
+#  ---------------------------------------------------
+
+Q1 = data[['age', 'avg_glucose_level', 'bmi']].quantile(0.25)
+Q3 = data[['age', 'avg_glucose_level', 'bmi']].quantile(0.75)
+IQR = Q3 - Q1
+
+# Define outliers as any data point outside 1.5 * IQR
+outliers = ((data[['age', 'avg_glucose_level', 'bmi']] < (Q1 - 1.5 * IQR)) |
+            (data[['age', 'avg_glucose_level', 'bmi']] > (Q3 + 1.5 * IQR))).any(axis=1)
+
+outliers_jumlah = outliers.sum()
+data_dibersihkan = data[~outliers]
