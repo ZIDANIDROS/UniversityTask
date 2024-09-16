@@ -54,3 +54,18 @@ outliers = ((data[['age', 'avg_glucose_level', 'bmi']] < (Q1 - 1.5 * IQR)) |
 
 outliers_jumlah = outliers.sum()
 data_dibersihkan = data[~outliers]
+
+#  ---------------------------------------------------
+
+# print(f"\nJumlah outlier yang dihapus: {outliers_jumlah}")
+# print('\n')
+# print("Data setelah menghapus outlier:")
+# print(data_dibersihkan.head())
+
+#  ---------------------------------------------------
+
+
+#  ---------------------------------------------------
+
+
+#  ---------------------------------------------------
