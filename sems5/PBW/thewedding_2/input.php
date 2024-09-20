@@ -1,17 +1,14 @@
 <?php
-// Mengimpor file koneksi
+
 include 'koneksi.php';
 
-// Proses penyimpanan data jika formulir disubmit
 if (isset($_POST['submit'])) {
     $nama = $_POST['nama'];
     $email = $_POST['email'];
     $komentar = $_POST['komentar'];
 
-    // SQL untuk insert data ke tabel tamu
     $sql = "INSERT INTO tamu (nama, email, komentar) VALUES ('$nama', '$email', '$komentar')";
 
-    // Eksekusi query dan cek keberhasilannya
     if ($conn->query($sql) === TRUE) {
         echo "<p>Terima kasih, data Anda telah disimpan!</p>";
     } else {
