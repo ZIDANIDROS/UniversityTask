@@ -7,12 +7,16 @@ if (isset($_POST['submit'])) {
     $email = $_POST['email'];
     $komentar = $_POST['komentar'];
 
-    $sql = "INSERT INTO tamu (nama, email, komentar) VALUES ('$nama', '$email', '$komentar')";
+    $sql = "INSERT INTO tamu (nama, email, komentar) VALUES (:nama, :email, :komentar)";
+    $stmt = $conn->prepare($sql);
+    $stmt->bindParam(':nama', $nama);
+    $stmt->bindParam(':email', $email);
+    $stmt->bindParam(':komentar', $komentar);
 
-    if ($conn->query($sql) === TRUE) {
+    if ($stmt->execute()) {
         echo "<p>Terima kasih, data Anda telah disimpan!</p>";
     } else {
-        echo "<p>Error: " . $sql . "<br>" . $conn->error . "</p>";
+        echo "<p>Error: " . $stmt->errorInfo()[2] . "</p>";
     }
 }
 ?>
@@ -29,7 +33,6 @@ if (isset($_POST['submit'])) {
 <body>
     <h1>Isi Buku Tamu</h1>
 
-    <!-- Formulir untuk input data tamu -->
     <form method="post" action="input.php">
         <label for="nama">Nama:</label><br>
         <input type="text" id="nama" name="nama" required><br><br>

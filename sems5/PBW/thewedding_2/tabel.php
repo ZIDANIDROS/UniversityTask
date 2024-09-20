@@ -1,5 +1,4 @@
 <?php
-// Mengimpor file koneksi
 include 'koneksi.php';
 ?>
 
@@ -24,13 +23,12 @@ include 'koneksi.php';
         </tr>
 
         <?php
-        // Ambil data dari tabel tamu
         $sql = "SELECT nama, email, komentar, tanggal FROM tamu ORDER BY tanggal DESC";
-        $result = $conn->query($sql);
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
 
-        // Tampilkan data tamu dalam tabel
-        if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
+        if ($stmt->rowCount() > 0) {
+            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                 echo "<tr>";
                 echo "<td>" . htmlspecialchars($row["nama"]) . "</td>";
                 echo "<td>" . htmlspecialchars($row["email"]) . "</td>";
@@ -42,8 +40,7 @@ include 'koneksi.php';
             echo "<tr><td colspan='4'>Belum ada data tamu.</td></tr>";
         }
 
-        // Menutup koneksi
-        $conn->close();
+        $conn = null;
         ?>
     </table>
 
