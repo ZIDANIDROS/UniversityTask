@@ -1,0 +1,11 @@
+import pandas as pd
+
+data = pd.read_csv('WHO-COVID-19-global-data.csv', sep=';')
+
+data_info = data.info()
+data_head = data.head()
+
+
+# data_info
+# print('\n')
+# data_head
