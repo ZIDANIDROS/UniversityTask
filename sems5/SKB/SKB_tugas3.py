@@ -95,3 +95,70 @@ final_df = pd.concat([normalized_df, data[non_numeric_cols].reset_index(drop=Tru
 
 # Menampilkan deskripsi dari data final
 # print(final_df.describe())
+
+# ------------------------------------------------------------
+
+# Mengubah hasil kembali ke DataFrame jika diperlukan
+normalized_data = pd.DataFrame(normalized_data, columns=data.select_dtypes(include=[np.number]).columns)
+
+# print("Data setelah penanganan outliers:")
+# print(data,'\n')
+
+# print("Data setelah standarisasi:")
+# print(standardized_data,'\n')
+# print("Data setelah normalisasi:")
+# print(normalized_data,'\n')
+
+# ------------------------------------------------------------
+
+# Mengonversi kolom Date_reported menjadi tipe datetime
+# data['Date_reported'] = pd.to_datetime(data['Date_reported'], format='%d/%m/%Y')
+
+# Membuat fitur baru berdasarkan tanggal
+data['Year'] = data['Date_reported'].dt.year
+data['Month'] = data['Date_reported'].dt.month
+data['Day_of_week'] = data['Date_reported'].dt.dayofweek  # 0 = Monday, 6 = Sunday
+data['Is_weekend'] = data['Day_of_week'].apply(lambda x: 1 if x >= 5 else 0)  # 1 = weekend, 0 = weekday
+
+# Cek hasilnya
+# data[['Date_reported', 'Year', 'Month', 'Day_of_week', 'Is_weekend']].head()
+
+
+# ------------------------------------------------------------
+
+# Transformasi logaritmik pada kolom yang mengandung nilai positif
+import numpy as np
+
+# Hindari log(0) dengan menambahkan 1 untuk data yang tidak nol
+data['Log_New_cases'] = np.log1p(data['New_cases'].fillna(0))
+data['Log_Cumulative_cases'] = np.log1p(data['Cumulative_cases'].fillna(0))
+data['Log_New_deaths'] = np.log1p(data['New_deaths'].fillna(0))
+data['Log_Cumulative_deaths'] = np.log1p(data['Cumulative_deaths'].fillna(0))
+
+# Cek hasil
+# data[['New_cases', 'Log_New_cases', 'Cumulative_cases', 'Log_Cumulative_cases']].head()
+
+# ------------------------------------------------------------
+
+# Menghitung death rate (jika New_cases > 0)
+data['Death_rate'] = np.where(data['New_cases'] > 0, data['New_deaths'] / data['New_cases'], 0)
+
+# Cek hasil
+data[['New_cases', 'New_deaths', 'Death_rate']].head()
+
+# ------------------------------------------------------------
+
+# Membuat lagging untuk kolom kasus dan kematian
+data['Lag_1_day_cases'] = data['New_cases'].shift(1)
+data['Lag_1_day_deaths'] = data['New_deaths'].shift(1)
+
+# Cek hasil
+# data[['Date_reported', 'New_cases', 'Lag_1_day_cases', 'New_deaths', 'Lag_1_day_deaths']].head()
+
+# ------------------------------------------------------------
+
+# One-hot encoding untuk WHO_region
+data_encoded = pd.get_dummies(data, columns=['WHO_region'])
+
+# Cek hasil
+# data_encoded.head()
