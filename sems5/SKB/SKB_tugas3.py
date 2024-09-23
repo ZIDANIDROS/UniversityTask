@@ -28,7 +28,9 @@ def wisker(col):
 
 # data.columns
 # ------------------------------------------------------------
-
+# Menampilkan dataframe setelah menghapus outliers
+# print("\nData setelah menghapus outliers:")
+# print(data.describe())
 # ------------------------------------------------------------
 
 # ------------------------------------------------------------
