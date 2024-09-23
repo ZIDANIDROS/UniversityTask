@@ -17,7 +17,16 @@ data_head = data.head()
 # ------------------------------------------------------------
 # data.isnull().sum()
 # ------------------------------------------------------------
+# Penanganan Outliers
+# Outliers dapat mengganggu perhitungan statistik, model prediksi, dan visualisasi.
+def wisker(col):
+    q1, q3 = np.percentile(col, [25, 75])
+    iqr = q3 - q1
+    lower_bound = q1 - (1.5 * iqr)
+    upper_bound = q3 + (1.5 * iqr)
+    return lower_bound, upper_bound
 
+# data.columns
 # ------------------------------------------------------------
 
 # ------------------------------------------------------------
