@@ -1,0 +1,38 @@
+@startuml
+entity "User" {
+  +user_id : int
+  --
+  username : string
+  email : string
+  role : string
+}
+
+entity "Book" {
+  +book_id : int
+  --
+  judul : string
+  harga : float
+  pemilik : string
+  status : string
+}
+
+entity "Loan" {
+  +loan_id : int
+  --
+  loan_date : Date
+  return_date : Date
+  status : string
+}
+
+entity "Report" {
+  +report_id : int
+  --
+  report_type : string
+  details : string
+}
+
+User ||--o{ Loan : "meminjam"
+User ||--o{ Book : "menjual/membeli"
+Book ||--o{ Loan : "dipinjam"
+Loan }o--|| Report : "tercatat dalam"
+@enduml
