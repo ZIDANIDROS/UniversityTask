@@ -10,7 +10,6 @@
 <body style="background-color: black;color:azure">
     <?php include 'src/view/layout/navbar.html' ?>
     <a href="login.php">Login</a>
-    <a href="logout.php">Logout</a>
 </body>
 
 </html>
