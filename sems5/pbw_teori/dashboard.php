@@ -31,27 +31,25 @@ $availableBooks = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <th>Book ID</th>
             <th>Judul</th>
             <th>Harga</th>
-            <th>Pemilik</th>
-            <th>Status</th>
+            <th>Pencipta</th>
             <th>Aksi</th>
         </tr>
         <?php if (count($availableBooks) > 0): ?>
-        <?php foreach ($availableBooks as $book): ?>
-        <tr>
-            <td><?php echo $book['book_id']; ?></td>
-            <td><?php echo $book['judul']; ?></td>
-            <td><?php echo $book['harga']; ?></td>
-            <td><?php echo $book['pemilik']; ?></td>
-            <td><?php echo $book['status']; ?></td>
-            <td>
-                <a href="transaksi.php?book_id=<?php echo $book['book_id']; ?>">Transaksi</a>
-            </td>
-        </tr>
-        <?php endforeach; ?>
+            <?php foreach ($availableBooks as $book): ?>
+                <tr>
+                    <td><?php echo $book['book_id']; ?></td>
+                    <td><?php echo $book['judul']; ?></td>
+                    <td><?php echo $book['harga']; ?></td>
+                    <td><?php echo $book['nama_pemilik']; ?></td>
+                    <td>
+                        <a href="transaksi.php?book_id=<?php echo $book['book_id']; ?>">Transaksi</a>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
         <?php else: ?>
-        <tr>
-            <td colspan="6">Tidak ada buku yang tersedia.</td>
-        </tr>
+            <tr>
+                <td colspan="6">Tidak ada buku yang tersedia.</td>
+            </tr>
         <?php endif; ?>
     </table>
 </body>
