@@ -69,3 +69,23 @@ outliers_price.head()
 outliers_enginesize = detect_outliers('enginesize')
 print("\nOutliers pada 'enginesize':")
 outliers_enginesize.head()
+
+# Pembersihan Data
+# Menghapus Data yang Kotor
+
+# 2. Outliers ------------------------------------------------------------------
+#     2.2 hapus outliers
+
+# Fungsi untuk mendeteksi dan menghapus outliers menggunakan metode IQR karena Data tidak terlalu terpengaruh oleh outliers besar, karena IQR tidak sensitif terhadap nilai ekstrim
+def remove_outliers(df, column):
+    Q1 = df[column].quantile(0.25)
+    Q3 = df[column].quantile(0.75)
+    IQR = Q3 - Q1
+    lower_bound = Q1 - 1.5 * IQR
+    upper_bound = Q3 + 1.5 * IQR
+
+    # Filter untuk menghapus outliers
+    df_filtered = df[(df[column] >= lower_bound) & (df[column] <= upper_bound)]
+    
+    print(f"Outliers dihapus dari kolom '{column}'.")
+    return df_filtered
