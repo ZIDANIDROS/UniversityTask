@@ -135,3 +135,33 @@ if 'EngineSize_Standardized' in df_inliers.columns and 'Price_Standardized' in d
     print(df_inliers[['EngineSize_Standardized', 'Price_Standardized', 'EnginePrice_Interaction', 'EnginePrice_Ratio']].head())
 else:
     print("Kolom 'EngineSize_Standardized' dan 'Price_Standardized' tidak ditemukan dalam DataFrame.")
+
+
+
+from sklearn.linear_model import LinearRegression
+
+# Misalkan df_inliers adalah DataFrame yang sudah ada dengan atribut yang dibutuhkan
+X = df_inliers[['EngineSize_Standardized']].values
+y = df_inliers['Price_Standardized'].values
+
+# Membuat dan melatih model regresi linier
+model = LinearRegression()
+model.fit(X, y)
+
+# Menghitung prediksi
+predictions = model.predict(X)
+
+# Membuat scatter plot
+plt.figure(figsize=(10, 6))
+plt.scatter(df_inliers['EngineSize_Standardized'], df_inliers['Price_Standardized'], color='blue', alpha=0.6, label='Data Asli')
+plt.plot(df_inliers['EngineSize_Standardized'], predictions, color='red', label='Garis Regresi', linewidth=2)
+
+# Menambahkan label dan judul
+plt.title('Scatter Plot: Engine Size vs Price (Standardized)')
+plt.xlabel('Engine Size (Standardized)')
+plt.ylabel('Price (Standardized)')
+plt.legend()
+plt.grid(True)
+
+# Menampilkan plot
+plt.show()
