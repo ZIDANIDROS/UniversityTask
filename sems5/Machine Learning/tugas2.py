@@ -7,3 +7,7 @@ import matplotlib.pyplot as plt
 file_path = 'CarPrice_Assignment.csv'
 df = pd.read_csv(file_path)
 df
+
+# melihat isi tipedata tiap atribut
+data_types = df.dtypes
+data_types
