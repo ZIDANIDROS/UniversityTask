@@ -23,3 +23,17 @@ sns.heatmap(correlation_matrix, annot=True, fmt='.2f', cmap='coolwarm', square=T
 
 plt.title('Heatmap Korelasi Antar Atribut Bertipe int dan floatn/')
 plt.show()
+
+# Pembersihan Data
+# Menghapus Data yang Kotor
+
+# 1.Cek data apakah ada yang null
+
+null_columns = df.columns[df.isnull().any()]
+
+if len(null_columns) > 0:
+    print("Kolom yang memiliki nilai null:")
+    for column in null_columns:
+        print(f"- {column}")
+else:
+    print("Tidak ada kolom yang memiliki nilai null.")
