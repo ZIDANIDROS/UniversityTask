@@ -89,3 +89,49 @@ def remove_outliers(df, column):
     
     print(f"Outliers dihapus dari kolom '{column}'.")
     return df_filtered
+
+# Menghapus outliers dari kolom 'price'
+df_no_outliers_price = remove_outliers(df, 'price')
+
+# Menghapus outliers dari kolom 'enginesize'
+df_inliers = remove_outliers(df_no_outliers_price, 'enginesize')
+
+# Menampilkan hasil setelah menghapus outliers
+print("\nData setelah menghapus outliers pada 'price' dan 'enginesize':")
+df_inliers.head()
+
+
+# Normalisasi / Transformasi Data
+# Mengnormalisasikan data inlinier
+
+# 3. Standar Devisiasi (Z-score) karena Skala yang Konsisten -------------------
+#     - Mean
+#     - Variance
+#     - Standar Devisiasi
+
+# Fungsi untuk standardisasi
+def standardize_column(column):
+    mean = column.mean()
+    std_dev = column.std()
+    return (column - mean) / std_dev
+
+
+# Menerapkan standardisasi pada kolom 'Price' dan 'EngineSize'
+df_inliers['Price_Standardized'] = standardize_column(df_inliers['price'])
+df_inliers['EngineSize_Standardized'] = standardize_column(df_inliers['enginesize'])
+
+# Menampilkan DataFrame setelah standardisasi
+df_inliers.head()
+
+
+if 'EngineSize_Standardized' in df_inliers.columns and 'Price_Standardized' in df_inliers.columns:
+    # 1. Membuat interaksi antara EngineSize dan Price
+    df_inliers['EnginePrice_Interaction'] = df_inliers['EngineSize_Standardized'] * df_inliers['Price_Standardized']
+    
+    # 2. Menghitung rasio antara EngineSize dan Price
+    df_inliers['EnginePrice_Ratio'] = df_inliers['EngineSize_Standardized'] / (df_inliers['Price_Standardized'] + 1e-5)  # Menghindari pembagian dengan nol
+    
+    # 3. Menampilkan beberapa baris teratas dari DataFrame setelah feature engineering
+    print(df_inliers[['EngineSize_Standardized', 'Price_Standardized', 'EnginePrice_Interaction', 'EnginePrice_Ratio']].head())
+else:
+    print("Kolom 'EngineSize_Standardized' dan 'Price_Standardized' tidak ditemukan dalam DataFrame.")
