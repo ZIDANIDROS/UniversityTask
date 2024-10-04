@@ -1,30 +1,38 @@
 <?php
-include 'src/model/db.php';
+session_start();
+require __DIR__ . '/src/model/db.php'; // Menghubungkan ke database
+require __DIR__ . '/src/model/User.php'; // Menghubungkan kelas User
+require __DIR__ . '/src/controller/AuthController.php'; // Menghubungkan kelas AuthController
+
+// Inisialisasi objek User
+$userModel = new User($pdo);
+$authController = new AuthController($userModel);
+
+// Inisialisasi variabel result untuk menghindari undefined variable
+$result = ['success' => false, 'message' => '']; // Inisialisasi dengan nilai default
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
+    // Ambil username dan password dari input form
+    $username = $_POST['username'] ?? ''; // Menggunakan null coalescing operator untuk menghindari undefined index
+    $password = $_POST['password'] ?? '';
 
-    // Cek apakah username dan password tidak kosong
-    if (!empty($username) && !empty($password)) {
-        // Hash password sebelum disimpan
-        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+    // Panggil fungsi login dari AuthController
+    $result = $authController->login($username, $password);
 
-        // Simpan ke database
-        $stmt = $pdo->prepare("INSERT INTO users (username, password) VALUES (:username, :password)");
-        try {
-            $stmt->execute(['username' => $username, 'password' => $hashedPassword]);
-            echo "Registrasi berhasil!";
-        } catch (PDOException $e) {
-            // Handle jika username sudah ada atau error lain
-            if ($e->getCode() == 23000) {
-                echo "Username sudah ada!";
-            } else {
-                echo "Terjadi kesalahan: " . $e->getMessage();
-            }
+    if ($result['success']) {
+        // Ambil data pengguna setelah login berhasil
+        $user = $userModel->findByUsername($username); // Dapatkan data pengguna berdasarkan username
+        $userRole = $user['role']; // Ambil role pengguna
+
+        // Arahkan ke dashboard berdasarkan role
+        if ($userRole === 'buyer') {
+            header("Location: dashboard.php"); // Arahkan ke dashboard buyer
+        } else if ($userRole === 'seller') {
+            header("Location: dashboard_seller.php"); // Arahkan ke dashboard seller
         }
+        exit; // Pastikan tidak ada kode yang dieksekusi setelah redirect
     } else {
-        echo "Username dan password harus diisi.";
+        echo "<p style='color:red;'>{$result['message']}</p>"; // Tampilkan pesan error jika login gagal
     }
 }
 ?>
@@ -34,17 +42,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <head>
     <meta charset="UTF-8">
-    <title>Register</title>
+    <title>Login</title>
 </head>
 
 <body>
-    <h2>Register Pengguna Baru</h2>
+    <h2>Login</h2>
     <form method="POST" action="">
         <label>Username: </label>
-        <input type="text" name="username"><br><br>
+        <input type="text" name="username" required><br><br>
         <label>Password: </label>
-        <input type="password" name="password"><br><br>
-        <button type="submit">Register</button>
+        <input type="password" name="password" required><br><br>
+        <button type="submit">Login</button>
     </form>
 </body>
 
