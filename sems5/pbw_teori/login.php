@@ -1,45 +1,41 @@
 <?php
 session_start();
-include 'src/model/db.php';
+require __DIR__ . '/src/model/db.php'; // Menghubungkan ke database
+require __DIR__ . '/src/model/User.php'; // Menghubungkan kelas User
+require __DIR__ . '/src/controller/AuthController.php'; // Menghubungkan kelas AuthController
 
-// Cek apakah pengguna sudah login
-if (isset($_SESSION['user_id'])) {
-    if ($_SESSION['role'] === 'seller') {
-        header('Location: dashboard_seller.php');
-    } else {
-        header('Location: dashboard.php');
-    }
-    exit;
-}
+// Inisialisasi objek User
+$userModel = new User($pdo);
+$authController = new AuthController($userModel);
+
+// Inisialisasi variabel result untuk menghindari undefined variable
+$result = ['success' => false, 'message' => '']; // Inisialisasi dengan nilai default
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
+    $username = $_POST['username'] ?? ''; // Ambil username
+    $password = $_POST['password'] ?? ''; // Ambil password
 
-    if (!empty($username) && !empty($password)) {
-        // Menyiapkan query untuk mengambil data pengguna berdasarkan username
-        $stmt = $pdo->prepare("SELECT * FROM users WHERE username = :username");
-        $stmt->execute(['username' => $username]);
-        $user = $stmt->fetch();
+    // Debug: Tampilkan username dan password yang diterima
+    error_log("Username: $username, Password: $password");
 
-        // Memeriksa apakah pengguna ada dan password cocok
-        if ($user && $password == $user['password']) {
-            $_SESSION['user_id'] = $user['user_id'];
-            $_SESSION['username'] = $user['username'];
-            $_SESSION['role'] = $user['role'];
+    // Panggil fungsi login dari AuthController
+    $result = $authController->login($username, $password);
 
-            // Arahkan ke dashboard sesuai role
-            if ($user['role'] === 'seller') {
-                header('Location: dashboard_seller.php');
-            } else {
-                header('Location: dashboard.php');
+    // Debug: Tampilkan hasil dari login
+    error_log(print_r($result, true));
+
+    if ($result['success']) {
+        // Ambil data pengguna setelah login berhasil
+        $user = $userModel->findByUsername($username);
+        if ($user) {
+            $userRole = $user['role']; // Ambil role pengguna
+            if ($userRole === 'buyer') {
+                header("Location: dashboard.php"); // Arahkan ke dashboard buyer
+            } else if ($userRole === 'seller') {
+                header("Location: dashboard_seller.php"); // Arahkan ke dashboard seller
             }
-            exit;
-        } else {
-            $error = "Username atau password salah.";
+            exit; // Pastikan tidak ada kode yang dieksekusi setelah redirect
         }
-    } else {
-        $error = "Username dan password harus diisi.";
     }
 }
 ?>
@@ -54,18 +50,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <body>
     <h2>Login</h2>
-    <?php if (isset($error)) {
-        echo "<p style='color:red;'>$error</p>";
-    } ?>
     <form method="POST" action="">
         <label>Username: </label>
         <input type="text" name="username" required><br><br>
         <label>Password: </label>
         <input type="password" name="password" required><br><br>
         <button type="submit">Login</button>
-        <button type="submit"><a href="/">Kembali ke dashboard</a></button>
     </form>
-
 </body>
 
 </html>
