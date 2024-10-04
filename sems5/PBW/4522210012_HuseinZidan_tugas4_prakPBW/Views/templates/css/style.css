@@ -1,0 +1,94 @@
+/* CSS untuk Background */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4; /* Warna background halaman */
+  font-family: Arial, sans-serif; /* Gaya font */
+}
+
+/* CSS untuk Form */
+form {
+  background-color: #fff; /* Warna latar belakang form */
+  padding: 20px;
+  margin: 50px auto;
+  width: 400px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bayangan untuk form */
+  border-radius: 8px; /* Membuat sudut form menjadi melengkung */
+}
+
+/* CSS untuk Input */
+input[type='text'],
+input[type='password'],
+input[type='email'] {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px; /* Sudut input melengkung */
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+input[type='submit'],
+button {
+  width: 100%;
+  background-color: #4caf50; /* Warna tombol submit */
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer; /* Menampilkan cursor pointer saat hover */
+  font-size: 16px;
+}
+
+input[type='submit']:hover,
+button:hover {
+  background-color: #45a049; /* Warna tombol saat di-hover */
+}
+
+/* CSS untuk label */
+label {
+  margin-bottom: 8px;
+  display: block;
+  font-weight: bold;
+}
+
+/* Style untuk table */
+table {
+  width: 100%;
+  border-collapse: collapse; /* Menghilangkan jarak antar border */
+  margin: 25px 0;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  text-align: left; /* Posisi teks rata kiri */
+}
+
+/* Style untuk header table */
+table th {
+  background-color: #4caf50; /* Warna latar belakang header */
+  color: white; /* Warna teks header */
+  padding: 12px 15px; /* Padding untuk header */
+}
+
+/* Style untuk baris dalam table */
+table td {
+  padding: 12px 15px; /* Padding untuk sel */
+  border-bottom: 1px solid #ddd; /* Border bawah untuk memisahkan baris */
+}
+
+/* Hover effect untuk baris */
+table tr:hover {
+  background-color: #f1f1f1; /* Warna latar belakang saat di-hover */
+}
+
+/* Style untuk baris genap */
+table tr:nth-child(even) {
+  background-color: #f9f9f9; /* Warna latar untuk baris genap */
+}
+
+/* Style untuk baris ganjil */
+table tr:nth-child(odd) {
+  background-color: #fff; /* Warna latar untuk baris ganjil */
+}
