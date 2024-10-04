@@ -26,7 +26,7 @@
 
 ## Kontribusi
 
-Dibuat oleh [Nama Anda].
+Dibuat oleh Husein Zidan.
 
 ## Lisensi
 
