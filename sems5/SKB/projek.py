@@ -21,3 +21,7 @@ min_support_count = 0.02 * total_transaksi
 
 # Membuat L1 dengan filter support count yang memenuhi syarat minimum support
 L1 = C1[C1['support'] >= min_support_count]
+
+# Menjalankan algoritma Apriori untuk menemukan frequent itemsets
+# Akan menghitung L2, L3, dst. secara otomatis
+frequent_itemsets = apriori(data_bool, min_support=0.02, use_colnames=True)
