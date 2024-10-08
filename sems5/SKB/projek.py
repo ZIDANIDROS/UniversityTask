@@ -8,3 +8,7 @@ data = pd.read_csv('market_basket_2.csv')
 data_filled = data.fillna(0)
 
 data_bool = data_filled.astype(bool)
+
+# Menghitung support count untuk setiap item (C1)
+C1 = data_bool.sum().reset_index()
+C1.columns = ['item', 'support']
