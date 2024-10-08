@@ -25,3 +25,9 @@ L1 = C1[C1['support'] >= min_support_count]
 # Menjalankan algoritma Apriori untuk menemukan frequent itemsets
 # Akan menghitung L2, L3, dst. secara otomatis
 frequent_itemsets = apriori(data_bool, min_support=0.02, use_colnames=True)
+
+# Mendapatkan aturan asosiasi
+rules = association_rules(frequent_itemsets, metric="confidence", min_threshold=0.5)
+
+print("Aturan Asosiasi:\n")
+rules
