@@ -12,3 +12,12 @@ data_bool = data_filled.astype(bool)
 # Menghitung support count untuk setiap item (C1)
 C1 = data_bool.sum().reset_index()
 C1.columns = ['item', 'support']
+
+# Menghitung total jumlah transaksi
+total_transaksi = len(data_bool)
+
+# Menetapkan minimum support count berdasarkan min_support = 0.02 (2%)
+min_support_count = 0.02 * total_transaksi
+
+# Membuat L1 dengan filter support count yang memenuhi syarat minimum support
+L1 = C1[C1['support'] >= min_support_count]
