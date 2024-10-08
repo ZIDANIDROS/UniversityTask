@@ -6,3 +6,5 @@ data = pd.read_csv('market_basket_2.csv')
 
 # Mengisi nilai NaN dengan 0
 data_filled = data.fillna(0)
+
+data_bool = data_filled.astype(bool)
