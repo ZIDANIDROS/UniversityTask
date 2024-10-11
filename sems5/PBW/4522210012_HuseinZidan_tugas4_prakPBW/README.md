@@ -6,23 +6,23 @@
 
 ### Halaman Home
 
-![Halaman Home](screenshots/home.png)
+![Halaman Home](https://github.com/ZIDANIDROS/UniversityTask/blob/main/sems5/PBW/4522210012_HuseinZidan_tugas4_prakPBW/screenshots/home.PNG)
 
 ### Form Login
 
-![Form Login](screenshots/login.png)
+![Form Login](https://github.com/ZIDANIDROS/UniversityTask/blob/main/sems5/PBW/4522210012_HuseinZidan_tugas4_prakPBW/screenshots/login.PNG)
 
 ### Halaman Admin
 
-![Halaman Admin](screenshots/admin.png)
+![Halaman Admin](https://github.com/ZIDANIDROS/UniversityTask/blob/main/sems5/PBW/4522210012_HuseinZidan_tugas4_prakPBW/screenshots/admin.PNG)
 
 ### Tambah Barang
 
-![Tambah Barang](screenshots/add.png)
+![Tambah Barang](https://github.com/ZIDANIDROS/UniversityTask/blob/main/sems5/PBW/4522210012_HuseinZidan_tugas4_prakPBW/screenshots/add.PNG)
 
 ### Edit Barang
 
-![Edit Barang](screenshots/edit.png)
+![Edit Barang](https://github.com/ZIDANIDROS/UniversityTask/blob/main/sems5/PBW/4522210012_HuseinZidan_tugas4_prakPBW/screenshots/edit.PNG)
 
 ## Kontribusi
 
