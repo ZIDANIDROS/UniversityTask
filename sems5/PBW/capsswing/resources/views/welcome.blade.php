@@ -10,62 +10,62 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <style>
-    body,
-    html {
-        height: 100%;
-        margin: 0;
-    }
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+        }
 
-    .background {
-        background-image: url('https://images.unsplash.com/photo-1499063078284-f78f7d89616a?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
-        background-size: cover;
-        /* Cover the entire area */
-        background-position: center;
-        /* Center the image */
-        height: 100vh;
-        /* Full viewport height */
-        position: relative;
-        /* Position relative for child elements */
-        display: flex;
-        flex-direction: column;
-    }
+        .background {
+            background-image: url('https://images.unsplash.com/photo-1499063078284-f78f7d89616a?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            background-size: cover;
+            /* Cover the entire area */
+            background-position: center;
+            /* Center the image */
+            height: 100vh;
+            /* Full viewport height */
+            position: relative;
+            /* Position relative for child elements */
+            display: flex;
+            flex-direction: column;
+        }
 
-    .content {
-        position: relative;
-        /* For stacking content above the background */
-        z-index: 1;
-        /* Ensure content is above the background */
-        color: white;
-        /* Optional: Change text color */
-    }
+        .content {
+            position: relative;
+            /* For stacking content above the background */
+            z-index: 1;
+            /* Ensure content is above the background */
+            color: white;
+            /* Optional: Change text color */
+        }
 
-    .navbar {
-        background: rgba(255, 255, 255, 0.1);
-        /* Semi-transparent white background */
-        backdrop-filter: blur(10px);
-        /* Blur effect for glass effect */
-        border-radius: 10px;
-        /* Rounded corners */
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-        /* Shadow for depth */
-    }
+        .navbar {
+            background: rgba(255, 255, 255, 0.1);
+            /* Semi-transparent white background */
+            backdrop-filter: blur(10px);
+            /* Blur effect for glass effect */
+            border-radius: 10px;
+            /* Rounded corners */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            /* Shadow for depth */
+        }
 
-    .nav-link {
-        color: #163142;
-        font-size: 20px;
-        transition: color 0.3s, font-weight 0.3s;
-        font-weight: bold;
-    }
+        .nav-link {
+            color: #163142;
+            font-size: 20px;
+            transition: color 0.3s, font-weight 0.3s;
+            font-weight: bold;
+        }
 
-    .nav-link:hover {
-        color: blue;
-        text-decoration: underline;
-    }
+        .nav-link:hover {
+            color: blue;
+            text-decoration: underline;
+        }
 
-    .navbar-brand {
-        color: #163142;
-        /* Warna brand */
-    }
+        .navbar-brand {
+            color: #163142;
+            /* Warna brand */
+        }
     </style>
 </head>
 
@@ -75,6 +75,7 @@
             <div class="container">
                 <a class="navbar-brand" href="/">
 
+                    <!-- LOGO -->
                     <svg width="206" height="26" viewBox="0 0 206 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <mask id="path-1-outside-1_38_15" maskUnits="userSpaceOnUse" x="-1" y="-1" width="208"
                             height="28" fill="black">
