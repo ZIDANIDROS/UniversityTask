@@ -1,50 +1,51 @@
 <x-app-layout title="Users">
     <x-slot name="heading">Users</x-slot>
     <div class="sm:flex sm:items-center">
-        <div class="sm:flex-auto">
-            <h1 class="text-base font-semibold leading-6 text-gray-900">Users</h1>
-            <p class="mt-2 text-sm text-gray-700">A list of all the users in your account including their name,
+        <x-section-title>
+            <x-slot name="title">Users</x-slot>
+            <x-slot name="description">A list of all the users in your account including their name,
                 title,
-                email and role.</p>
-        </div>
+                email and role.</x-slot>
+        </x-section-title>
         <div class="mt-4 sm:ml-16 sm:mt-0 sm:flex-none">
-            <button type="button"
-                class="block rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+            <x-button as="a" href="/users/create">
                 Add user
-            </button>
+            </x-button>
         </div>
     </div>
     <div class="mt-8 flow-root">
-        <x-table.index>
-            <thead>
+        <x-table>
+            <x-table.thead>
                 <tr>
-                    <th>#</th>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Created At</th>
+                    <x-table.th>No</x-table.th>
+                    <x-table.th>Name
+                    </x-table.th>
+                    <x-table.th>Email
+                    </x-table.th>
+                    <x-table.th>Creat-at
+                    </x-table.th>
                 </tr>
-            </thead>
-            <tbody>
+            </x-table.thead>
+            <x-table.tbody>
                 @foreach ($users as $user )
                 <tr>
-                    <td>
+                    <x-table.td>
                         {{$user->id}}
                         <!-- kalo data tidak beraturan maka seharusnya menggunakan iteriton -->
-                    </td>
-                    <td>
+                    </x-table.td>
+                    <x-table.td>
                         {{$user->name}}
-                    </td>
-                    <td>
+                    </x-table.td>
+                    <x-table.td>
                         {{$user->email}}
-                    </td>
-                    <td>
+                    </x-table.td>
+                    <x-table.td>
                         {{$user->created_at->format('d M Y')}} ||
                         {{$user->created_at->diffForHumans()}}
-                    </td>
-                </tr>
-                @endforeach
-            </tbody>
-        </x-table.index>
+                    </x-table.td>
+                </tr>@endforeach
+            </x-table.tbody>
+        </x-table>
     </div>
 
 </x-app-layout>
