@@ -30,8 +30,14 @@ class UserController extends Controller
 
     public function store(Request $request)
     {
+        $validated = $request->validate([
+            'name' => ['required', 'min:3', 'max:255', 'string'],
+            'email' => ['required', 'email'],
+            'password' => ['required', 'min:8']
+        ]);
+
         // dd($request->only('name', 'email', 'password'));
-        User::create($request->only('name', 'email', 'password'));
+        User::create($validated);
         return redirect('/users');
     }
 }
