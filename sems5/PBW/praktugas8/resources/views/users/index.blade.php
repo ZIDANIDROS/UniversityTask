@@ -45,9 +45,14 @@
                         {{$user->created_at->diffForHumans()}}
                     </x-table.td>
                     <x-table.td>
-                        <a href="/users/{{$user->id}}" target="_blank" rel="noopener noreferrer">
-                            View
-                        </a>
+                        <div class="flex justify-end gap-x-2">
+                            <a href="/users/{{$user->id}}" class="hover:underline">
+                                View
+                            </a>
+                            <a href="/users/{{$user->id}}/edit" class="hover:underline">
+                                edit
+                            </a>
+                        </div>
                     </x-table.td>
                 </tr>
                 @endforeach
