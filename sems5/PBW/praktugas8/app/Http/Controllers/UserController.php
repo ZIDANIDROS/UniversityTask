@@ -40,4 +40,12 @@ class UserController extends Controller
         User::create($validated);
         return redirect('/users');
     }
+
+    public function show($id)
+    {
+        $user = User::findOrFail($id);
+        // $user = User::where('username',$id)->first();
+        abort_if(!$user, 404);
+        return view('users/show', compact('user'));
+    }
 }
