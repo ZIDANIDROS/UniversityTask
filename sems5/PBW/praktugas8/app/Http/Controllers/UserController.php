@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use \App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Http\Requests\UserRequest;
 
 class UserController extends Controller
 {
@@ -36,9 +37,9 @@ class UserController extends Controller
         ]);
     }
 
-    public function store(Request $request)
+    public function store(UserRequest $request)
     {
-        User::create($request->validate($this->requestValidate()));
+        User::create($request->validated());
 
         // dd($request->only('name', 'email', 'password'));
 
@@ -65,21 +66,12 @@ class UserController extends Controller
             ]
         ]);
     }
-    public function update(Request $request, User $user)
+    public function update(UserRequest $request, User $user)
     {
-        $user->update($request->validate($this->requestValidate()));
+        $user->update($request->validated());
 
         // dd($request->only('name', 'email', 'password'));
 
         return redirect('/users');
-    }
-
-    protected function requestValidate()
-    {
-        return [
-            'name' => ['required', 'min:3', 'max:255', 'string'],
-            'email' => ['required', 'email'],
-            'password' => ['required', 'min:8']
-        ];
     }
 }
