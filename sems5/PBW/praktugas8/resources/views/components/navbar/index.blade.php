@@ -23,16 +23,16 @@
                         <x-navbar.link href="/">
                             Menu
                         </x-navbar.link>
-                        <x-navbar.link href="/about">
+                        <x-navbar.link href="{{ route('about') }}">
                             About
                         </x-navbar.link>
-                        <x-navbar.link href="/contact">
+                        <x-navbar.link href="{{ route('contact') }}">
                             Contact
                         </x-navbar.link>
-                        <x-navbar.link href="/gallery">
+                        <x-navbar.link href="{{ route('gallery') }}">
                             Gallery
                         </x-navbar.link>
-                        <x-navbar.link href="/users">
+                        <x-navbar.link href="{{ route('users.index') }}">
                             User
                         </x-navbar.link>
                     </div>
@@ -46,13 +46,13 @@
         <div class="space-y-1 px-2 pb-3 pt-2">
             <x-navbar.dropdown-item href="/">
                 Menu</x-navbar.dropdown-item>
-            <x-navbar.dropdown-item href="/about">
+            <x-navbar.dropdown-item href="{{ route('about') }}">
                 About</x-navbar.dropdown-item>
-            <x-navbar.dropdown-item href="/contact">
+            <x-navbar.dropdown-item href="{{ route('contact') }}">
                 Contact</x-navbar.dropdown-item>
-            <x-navbar.dropdown-item href="/gallery">
+            <x-navbar.dropdown-item href="{{ route('gallery') }}">
                 Gallery</x-navbar.dropdown-item>
-            <x-navbar.dropdown-item href="/users">
+            <x-navbar.dropdown-item href="{{ route('users.index') }}">
                 User</x-navbar.dropdown-item>
         </div>
     </div>

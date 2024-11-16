@@ -31,7 +31,7 @@ class UserController extends Controller
             'page_meta' => [
                 'title' => 'Create new user',
                 'method' => 'post',
-                'url' => '/users',
+                'url' => route('users.store'),
                 'submit_text' => 'Create'
             ]
         ]);
@@ -61,7 +61,7 @@ class UserController extends Controller
             'page_meta' => [
                 'title' => 'Edit user : ' . $user->name,
                 'method' => 'put',
-                'url' => '/users/' . $user->id,
+                'url' => route('users.update', $user),
                 'submit_text' => 'Update'
             ]
         ]);
@@ -79,6 +79,6 @@ class UserController extends Controller
     {
         $user->delete();
 
-        return redirect('users');
+        return redirect(route('users.index'));
     }
 }
