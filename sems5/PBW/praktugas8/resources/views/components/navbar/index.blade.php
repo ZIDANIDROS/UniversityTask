@@ -32,9 +32,28 @@
                         <x-navbar.link href="{{ route('gallery') }}">
                             Gallery
                         </x-navbar.link>
+
+                        @auth
                         <x-navbar.link href="{{ route('users.index') }}">
                             User
                         </x-navbar.link>
+
+                        <x-navbar.link href="#">
+                            {{Auth::user()->email}}
+                        </x-navbar.link>
+
+                        <form action="{{ route('logout') }}" method="POST">
+                            @csrf
+                            <x-button type="submit">
+                                Log Out
+                            </x-button>
+                        </form>
+                        @else
+                        <x-navbar.link href="{{ route('login') }}">
+                            Login
+                        </x-navbar.link>
+                        @endauth
+
                     </div>
 
                 </div>
@@ -54,6 +73,8 @@
                 Gallery</x-navbar.dropdown-item>
             <x-navbar.dropdown-item href="{{ route('users.index') }}">
                 User</x-navbar.dropdown-item>
+            <x-navbar.dropdown-item href="{{ route('login') }}">
+                Login</x-navbar.dropdown-item>
         </div>
     </div>
 </nav>
