@@ -35,14 +35,15 @@
 11. Fillable<br>
     <img src="https://raw.githubusercontent.com/ZIDANIDROS/UniversityTask/refs/heads/main/sems5/PBW/praktugas8/tugas/13code.PNG" width="500px">
     <img src="https://raw.githubusercontent.com/ZIDANIDROS/UniversityTask/refs/heads/main/sems5/PBW/praktugas8/tugas/13gambar.PNG" width="500p">
-12. Update<br>
+12. route wilcard<br>
     <img src="https://raw.githubusercontent.com/ZIDANIDROS/UniversityTask/refs/heads/main/sems5/PBW/praktugas8/tugas/13code.PNG" width="500px">
+13. update and refectory<br>
     <img src="https://raw.githubusercontent.com/ZIDANIDROS/UniversityTask/refs/heads/main/sems5/PBW/praktugas8/tugas/13gambar.PNG" width="500p">
-13. Handle Request<br>
+14. Handle Request<br>
     <img src="https://raw.githubusercontent.com/ZIDANIDROS/UniversityTask/refs/heads/main/sems5/PBW/praktugas8/tugas/14.PNG" width="500px">
-14. Delete<br>
+15. Delete<br>
     <img src="https://raw.githubusercontent.com/ZIDANIDROS/UniversityTask/refs/heads/main/sems5/PBW/praktugas8/tugas/15.PNG" width="500px">
-15. Route and Resource<br>
+16. Route Resource<br>
     <img src="https://raw.githubusercontent.com/ZIDANIDROS/UniversityTask/refs/heads/main/sems5/PBW/praktugas8/tugas/16.PNG" width="500px">
-16. Auth User<br>
+17. Auth User<br>
     <img src="https://raw.githubusercontent.com/ZIDANIDROS/UniversityTask/refs/heads/main/sems5/PBW/praktugas8/tugas/17.PNG" width="500px">
