@@ -21,28 +21,28 @@
    <img src="https://raw.githubusercontent.com/ZIDANIDROS/UniversityTask/refs/heads/main/sems5/PBW/praktugas8/tugas/7.PNG" width="500px">
    <img src="https://raw.githubusercontent.com/ZIDANIDROS/UniversityTask/refs/heads/main/sems5/PBW/praktugas8/tugas/71.PNG" width="500px">
 
-7. DB
+7. DB<br>
    <img src="https://raw.githubusercontent.com/ZIDANIDROS/UniversityTask/refs/heads/main/sems5/PBW/praktugas8/tugas/7.PNG" width="500px">
-8. Code
+8. Code<br>
    <img src="https://raw.githubusercontent.com/ZIDANIDROS/UniversityTask/refs/heads/main/sems5/PBW/praktugas8/tugas/8code.PNG" width="500px">
    <img src="https://raw.githubusercontent.com/ZIDANIDROS/UniversityTask/refs/heads/main/sems5/PBW/praktugas8/tugas/8codee.PNG" width="500px">
    <img src="https://raw.githubusercontent.com/ZIDANIDROS/UniversityTask/refs/heads/main/sems5/PBW/praktugas8/tugas/8web.PNG" width="500px">
-9. Model
+9. Model<br>
    <img src="https://raw.githubusercontent.com/ZIDANIDROS/UniversityTask/refs/heads/main/sems5/PBW/praktugas8/tugas/7hasil.PNG" width="500px">
-10. Komponen
+10. Komponen<br>
     <img src="https://raw.githubusercontent.com/ZIDANIDROS/UniversityTask/refs/heads/main/sems5/PBW/praktugas8/tugas/51.PNG" width="500px">
     <img src="https://raw.githubusercontent.com/ZIDANIDROS/UniversityTask/refs/heads/main/sems5/PBW/praktugas8/tugas/51.PNG" width="500px">
-11. Fillable
+11. Fillable<br>
     <img src="https://raw.githubusercontent.com/ZIDANIDROS/UniversityTask/refs/heads/main/sems5/PBW/praktugas8/tugas/13code.PNG" width="500px">
     <img src="https://raw.githubusercontent.com/ZIDANIDROS/UniversityTask/refs/heads/main/sems5/PBW/praktugas8/tugas/13gambar.PNG" width="500p">
-12. Update
+12. Update<br>
     <img src="https://raw.githubusercontent.com/ZIDANIDROS/UniversityTask/refs/heads/main/sems5/PBW/praktugas8/tugas/13code.PNG" width="500px">
     <img src="https://raw.githubusercontent.com/ZIDANIDROS/UniversityTask/refs/heads/main/sems5/PBW/praktugas8/tugas/13gambar.PNG" width="500p">
-13. Handle Request
+13. Handle Request<br>
     <img src="https://raw.githubusercontent.com/ZIDANIDROS/UniversityTask/refs/heads/main/sems5/PBW/praktugas8/tugas/14.PNG" width="500px">
-14. Delete
+14. Delete<br>
     <img src="https://raw.githubusercontent.com/ZIDANIDROS/UniversityTask/refs/heads/main/sems5/PBW/praktugas8/tugas/15.PNG" width="500px">
-15. Route and Resource
+15. Route and Resource<br>
     <img src="https://raw.githubusercontent.com/ZIDANIDROS/UniversityTask/refs/heads/main/sems5/PBW/praktugas8/tugas/16.PNG" width="500px">
-16. Auth User
+16. Auth User<br>
     <img src="https://raw.githubusercontent.com/ZIDANIDROS/UniversityTask/refs/heads/main/sems5/PBW/praktugas8/tugas/17.PNG" width="500px">
