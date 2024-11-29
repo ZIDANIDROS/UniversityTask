@@ -47,3 +47,5 @@
     <img src="https://raw.githubusercontent.com/ZIDANIDROS/UniversityTask/refs/heads/main/sems5/PBW/praktugas8/tugas/16.PNG" width="500px">
 17. Auth User<br>
     <img src="https://raw.githubusercontent.com/ZIDANIDROS/UniversityTask/refs/heads/main/sems5/PBW/praktugas8/tugas/17.PNG" width="500px">
+18. Auth User<br>
+    <img src="https://raw.githubusercontent.com/ZIDANIDROS/UniversityTask/refs/heads/main/sems5/PBW/praktugas8/tugas/18/17.PNG" width="500px">
