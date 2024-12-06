@@ -53,3 +53,5 @@
     <img src="https://raw.githubusercontent.com/ZIDANIDROS/UniversityTask/refs/heads/main/sems5/PBW/praktugas8/tugas/18/19.PNG" width="500px">
 20. Form<br>
     <img src="https://raw.githubusercontent.com/ZIDANIDROS/UniversityTask/refs/heads/main/sems5/PBW/praktugas8/tugas/18/20.PNG" width="500px">
+21. Stores<br>
+    <img src="https://raw.githubusercontent.com/ZIDANIDROS/UniversityTask/refs/heads/main/sems5/PBW/praktugas8/tugas/18/21.PNG" width="500px">
