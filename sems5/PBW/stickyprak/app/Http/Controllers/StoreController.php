@@ -3,8 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\Store;
+use App\Models\User;
+use Illuminate\Auth\Middleware\Authenticate;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreRequest;
+use Illuminate\Routing\Controllers;
+use Illuminate\Support\Facades\Gate;
+use App\Policies\StorePolicy;
 
 class StoreController extends Controller
 {
@@ -62,7 +67,9 @@ class StoreController extends Controller
      */
     public function edit(Request $request, Store $store)
     {
-        abort_if($request->user()->isNot($store->user), 401);
+        Gate::authorize('update', $store);
+
+        // abort_if($request->user()->isNot($store->user), 401);
         return view('stores.form', [
             'store' => $store,
             'page_meta' => [
@@ -90,8 +97,4 @@ class StoreController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Store $store)
-    {
-        //
-    }
 }
