@@ -14,8 +14,8 @@
             @foreach ($stores as $store)
             <x-card>
                 <div class="p-6 pb-0">
-                    <img src="{{ \Illuminate\Support\Facades\Storage::url($store->logo) }}" alt="{{$store->name}}"
-                        class="size-16 rounded-lg" width="500">
+                    <img src="{{ Storage::url($store->logo) }}" alt="{{$store->name}}" class="size-16 rounded-lg"
+                        width="500">
                 </div>
 
                 <x-card.header>

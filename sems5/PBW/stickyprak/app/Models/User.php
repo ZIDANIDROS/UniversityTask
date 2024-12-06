@@ -3,10 +3,12 @@
 namespace App\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\belongsToMany;
+use Illuminate\Database\Eloquent\Relations\hasMany;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\model;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
@@ -47,8 +49,18 @@ class User extends Authenticatable implements MustVerifyEmail
         ];
     }
 
-    public function stores()
+    public function stores(): HasMany
     {
         return $this->hasMany(Store::class);
+    }
+
+    public function roles(): belongsToMany
+    {
+        return $this->belongsToMany(Role::class, 'user_role');
+    }
+
+    public function assignRole(Role $role): Model
+    {
+        return $this->roles()->save($role);
     }
 }
