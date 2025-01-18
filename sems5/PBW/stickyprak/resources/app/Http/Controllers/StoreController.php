@@ -38,7 +38,7 @@ class StoreController extends Controller
     {
 
         $stores = Store::query()
-            ->where('status', StoreStatus::ACTIVE)
+            ->where('status', StoreStatus::PENDING)
             ->latest()
             ->get();
 
@@ -91,6 +91,7 @@ class StoreController extends Controller
      */
     public function edit(Request $request, Store $store)
     {
+
         Gate::authorize('update', $store);
 
         // abort_if($request->user()->isNot($store->user), 401);

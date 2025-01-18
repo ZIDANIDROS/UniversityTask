@@ -28,7 +28,7 @@
 
                         @if ($store->status === \App\Enums\StoreStatus::PENDING)
                         <x-primary-button x-data=""
-                            x-on:click.prevent="$dispatch('open-modal', 'modal->{{$store->id}}')">
+                            x-on:click.prevent="$dispatch('open-modal', 'modal-{{$store->id}}')">
                             Approve</x-primary-button>
 
 
