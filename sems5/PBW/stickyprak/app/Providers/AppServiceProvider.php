@@ -24,5 +24,10 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         Gate::policy(Store::class, StorePolicy::class);
+
+        Gate::define(
+            'isPartner',
+            fn(User $user) => $user->isAdmin() || $user->isPartner()
+        );
     }
 }

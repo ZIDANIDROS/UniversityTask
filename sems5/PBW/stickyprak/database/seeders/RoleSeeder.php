@@ -13,13 +13,13 @@ class RoleSeeder extends Seeder
      * Run the database seeds.
      */
 
-
     public function run(): void
     {
         $user = User::create([
-            'name' => 'Husein',
-            'email' => 'Husein@gmail.com',
+            'name' => 'HUHU',
+            'email' => 'huhu@gmail.com',
             'password' => bcrypt('password'),
+            'email_verified_at' => now(),
         ]);
 
         User::factory(10)->create();
