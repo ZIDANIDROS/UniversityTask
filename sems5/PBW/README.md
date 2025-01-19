@@ -1,4 +1,5 @@
 <h1>LAPORAN</h1>
+<h2>parktikum ke 8</h2>
 1. setup<br>
 <img src="https://raw.githubusercontent.com/ZIDANIDROS/UniversityTask/refs/heads/main/sems5/PBW/4522210012_HuseinZidan_tugas14_prakPBW/tugas/1.PNG" width="500px">
 <img src="https://raw.githubusercontent.com/ZIDANIDROS/UniversityTask/refs/heads/main/sems5/PBW/4522210012_HuseinZidan_tugas14_prakPBW/tugas/2.PNG" width="500px">
@@ -48,7 +49,7 @@
 17. Auth User<br>
     <img src="https://raw.githubusercontent.com/ZIDANIDROS/UniversityTask/refs/heads/main/sems5/PBW/4522210012_HuseinZidan_tugas14_prakPBW/tugas/17.PNG" width="500px">
 
-<h1>sticky - praktikum 14</h1>
+<h2>parktikum ke 14</h2>
 1. Brezee
 <img src="https://raw.githubusercontent.com/ZIDANIDROS/UniversityTask/refs/heads/main/sems5/PBW/4522210012_HuseinZidan_tugas14_prakPBW/tugas/18/18.PNG" width="500px">
 2. Table dan Komponen card
