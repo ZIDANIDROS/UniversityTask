@@ -55,8 +55,6 @@
     <img src="https://raw.githubusercontent.com/ZIDANIDROS/UniversityTask/refs/heads/main/sems5/PBW/praktugas8/tugas/18/20.PNG" width="500px">
 21. Stores<br>
     <img src="https://raw.githubusercontent.com/ZIDANIDROS/UniversityTask/refs/heads/main/sems5/PBW/praktugas8/tugas/18/21.PNG" width="500px">
-<<<<<<< HEAD
-=======
 22. Stores<br>
     <img src="https://raw.githubusercontent.com/ZIDANIDROS/UniversityTask/refs/heads/main/sems5/PBW/praktugas8/tugas/18/22.PNG" width="500px">
 23. Stores<br>
@@ -66,4 +64,3 @@
     <img src="https://raw.githubusercontent.com/ZIDANIDROS/UniversityTask/refs/heads/main/sems5/PBW/praktugas8/tugas/18/24.PNG" width="500px">
 25. Stores<br>
     <img src="https://raw.githubusercontent.com/ZIDANIDROS/UniversityTask/refs/heads/main/sems5/PBW/praktugas8/tugas/18/25.PNG" width="500px">
->>>>>>> e46fdfbca59cf1488351bd3640cca4eaaa7499c1
