@@ -4,5 +4,5 @@ tugas kuliah
 - sems 2 = Sudah beberapa
 - sems 3 = cukup
 - sems 4 = dikit demi sedikit
-- sems 5 = otw
+- sems 5 = sudah semua
 - sems 6 = otw
