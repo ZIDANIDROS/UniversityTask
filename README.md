@@ -5,3 +5,4 @@ tugas kuliah
 - sems 3 = cukup
 - sems 4 = dikit demi sedikit
 - sems 5 = otw
+- sems 6 = otw
