@@ -5,5 +5,5 @@ tugas kuliah
 - sems 3 = cukup
 - sems 4 = dikit demi sedikit
 - sems 5 = sudah semua
-- sems 6 = otw
+- sems 6 = otw dan bismillah
 - sems 7 = skripsi
