@@ -6,4 +6,4 @@ tugas kuliah
 - sems 4 = dikit demi sedikit
 - sems 5 = sudah semua
 - sems 6 = otw dan bismillah
-- sems 7 = skripsi (Amin ya robb), selalu optimiss
+- sems 7 = skripsi (Amin ya robb), selalu optimiss, sehat selalu
