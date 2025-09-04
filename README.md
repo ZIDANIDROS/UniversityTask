@@ -4,3 +4,4 @@ tugas kuliah <br>
 bsertahan dengan banyaknya gempuran
 p
 a
+q
