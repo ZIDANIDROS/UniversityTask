@@ -6,4 +6,3 @@ tugas kuliah
 ----
 <p></p>
 ,
-.
