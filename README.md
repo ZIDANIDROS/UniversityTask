@@ -7,4 +7,3 @@ tugas kuliah
 <p></p>
 ,
 .
-.
